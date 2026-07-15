@@ -513,12 +513,18 @@ StScrollBar StButton#vhandle:hover
     -cinnamon-caption-spacing: 6px;
 }
 
+
+
 .window-close {
-    background-image: url("close-window.svg");
-    height: 34px;
-    width: 34px;
-    -cinnamon-close-overlap: 20px;
-    transition-duration: 150;
+  background-image: url("close.png");
+  height: 34px;
+  width: 34px;
+  -cinnamon-close-overlap: 20px;
+}
+
+.window-close:hover,
+.window-close:active {
+  background-image: url("close-hover.png");
 }
 
 .window-close:rtl {
@@ -1690,15 +1696,57 @@ StScrollBar StButton#vhandle:hover
  * Window list (windowList.js)
  * ===================================================================*/
 .window-list-box {
-    spacing: 0;
-    padding: 1px 0 0 0;
+  spacing: 5px;
+  padding-top: 3px;
 }
 
 .window-list-item-label {
-    font-weight: bold;
-    width: 15em;
-    min-width: 5px;
+  font-weight: normal;
+  width: 15em;
+  min-width: 5px;
 }
+
+.window-list-item-box {
+  border-image: url('normal.png');
+  padding: 1px;
+  transition-duration: 100;
+}
+
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus    {
+  border-image: url('active.png');
+}
+
+
+.window-list-item-box:hover  {
+  border-image: url('hover.png');
+}
+
+.window-list-item-box:focus:hover  {
+  border-image: url('active-hover.png');
+}
+
+.window-list-item-demands-attention {
+  border-image: url('urgent.png');
+}
+.grouped-window-list-thumbnail-menu {
+  spacing: 6px;
+  padding: 6px 12px 12px 12px;
+  border-image: url("menu-bottom.png") 6;
+  color: #ffffff;
+}
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+  padding: 8px;
+  border: 1px solid #00A7FB;
+}
+
+.grouped-window-list-thumbnail-menu .item-box:selected {
+  color: #ffffff;
+  background-color: #00A7FB;
+  border: none;
+}
+/* Panel thingy */
 
 #panelLeft .applet-box:first-child {
 
@@ -1833,11 +1881,12 @@ StScrollBar StButton#vhandle:hover
 	border-image: url("button-prelight.png") 3 3 3 3 stretch stretch;
 }
 
+
 .workspace-close-button {
-    background-image: url("close-window.svg");
-    height: 34px;
-    width: 34px;
-    -cinnamon-close-overlap: 20px;
+  background-image: url("close.png");
+  height: 34px;
+  width: 34px;
+  -cinnamon-close-overlap: 20px;
 }
 /* ===================================================================
  * Panel Launchers Applet (panelLaunchers.js)
